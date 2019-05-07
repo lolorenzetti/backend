@@ -46,5 +46,5 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
 //Utilizando o arquivo routes.js para pegar as rotas
 app.use(require('./routes'));
 
-//Definindo porta onde a aplicação é executada
-server.listen(3030);
+//Definindo porta onde a aplicação é executada tanto no dev como prod
+server.listen(process.env.PORT || 3030);
